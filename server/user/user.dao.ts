@@ -2,7 +2,6 @@
 import pool from '../db/pool';
 import { UserDTO, UserRowDTO } from './user.dto';
 import { CommunityDTO } from '../community/community.dto';
-import { RowDataPacket } from 'mysql2';
 
 class UserDao {
 	public async getUserList(): Promise<UserDTO[]> {
