@@ -14,6 +14,45 @@ cd client
 npm install
 ```
 
+### dbConfig
+```
+cd server/db
+# mac
+touch dbConfig.ts
+# windows
+type nul > dbConfig.ts
+```
+```javascript
+# dbConfig.ts
+
+export default {
+	"host": "hostname",
+	"port": port, // number
+	"user": "root",
+	"password": "password",
+	"database": "dbname"
+}
+```
+
+### db table
+```mysql
+create table user (
+	id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(20) NOT NULL,
+  age INT NOT NULL,
+  job VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+create table community (
+	id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  content VARCHAR(200) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  PRIMARY KEY (id)
+);
+```
+
 ### Server Start
 ```
 # bash1 - root 디렉토리
