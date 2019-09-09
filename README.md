@@ -38,18 +38,18 @@ export default {
 ```mysql
 create table user (
 	id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(20) NOT NULL,
-    age INT NOT NULL,
-    job VARCHAR(20) NOT NULL,
-    PRIMARY KEY (id)
+	name VARCHAR(20) NOT NULL,
+	age INT NOT NULL,
+	job VARCHAR(20) NOT NULL,
+	PRIMARY KEY (id)
 );
 
 create table community (
 	id INT NOT NULL AUTO_INCREMENT,
-    user_id INT NOT NULL,
-    content VARCHAR(200) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id),
-    PRIMARY KEY (id)
+	user_id INT NOT NULL,
+	content VARCHAR(200) NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES user(id),
+	PRIMARY KEY (id)
 );
 ```
 
